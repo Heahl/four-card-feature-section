@@ -15,24 +15,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   image,
 }) => {
   return (
-    <div
-      className={`bg-${color} mb-8 flex h-[220px] w-[350px] items-center justify-center overflow-hidden rounded-lg pt-1 shadow-2xl`}
-    >
-      <div className="flex h-full w-full flex-col items-start justify-center gap-4 bg-white px-6">
-        <h1 className="font-poppins text-very-dark-blue w-full text-left text-xl font-semibold">
-          {title}
-        </h1>
-        <p className="font-poppins text-grayish-blue w-56 text-left text-sm font-extralight">
-          {description}
-        </p>
-        <Image
-          src={`/images/icon-${image}.svg`}
-          width={64}
-          height={64}
-          alt={`${image} icon`}
-          className="my-2 h-16 w-16 self-end"
-        />
-      </div>
+    <div className="flex h-full w-full flex-col items-start justify-center gap-4 bg-white px-6">
+      <h1 className="font-poppins text-very-dark-blue w-full text-left text-xl font-semibold">
+        {title}
+      </h1>
+      <p className="font-poppins text-grayish-blue w-56 text-left text-sm font-extralight">
+        {description}
+      </p>
+      <Image
+        src={`/images/icon-${image}.svg`}
+        width={64}
+        height={64}
+        alt={`${image} icon`}
+        className="my-2 h-16 w-16 self-end"
+      />
     </div>
   );
 };
@@ -61,33 +57,50 @@ export default function Home() {
         </div>
         {/* Feature Cards */}
         <div className="flex w-[380px] flex-col items-center md:gap-4 lg:w-full lg:flex-row lg:justify-center lg:gap-0">
-          <FeatureCard
-            color="cyan"
-            title="Supervisor"
-            description="Monitors activity to identify project roadblocks"
-            image="supervisor"
-          />
-          {/* Vertical Cards */}
-          <div className="flex w-full flex-col items-center lg:w-1/3">
+          <div
+            className={`bg-cyan mb-8 flex h-[220px] w-[350px] items-center justify-center overflow-hidden rounded-lg pt-1 shadow-2xl`}
+          >
             <FeatureCard
-              color="red"
-              title="Team Builder"
-              description="Scans our talent network to create the optimal team for your project"
-              image="team-builder"
-            />
-            <FeatureCard
-              color="orange"
-              title="Karma"
-              description="Regularly evaluates our talent to ensure quality"
-              image="karma"
+              color="cyan"
+              title="Supervisor"
+              description="Monitors activity to identify project roadblocks"
+              image="supervisor"
             />
           </div>
-          <FeatureCard
-            color="blue"
-            title="Calculator"
-            description="Uses data from past projects to provide better delivery estimates"
-            image="calculator"
-          />
+
+          {/* Vertical Cards */}
+          <div className="flex w-full flex-col items-center lg:w-1/3">
+            <div
+              className={`bg-red mb-8 flex h-[220px] w-[350px] items-center justify-center overflow-hidden rounded-lg pt-1 shadow-2xl`}
+            >
+              <FeatureCard
+                color="red"
+                title="Team Builder"
+                description="Scans our talent network to create the optimal team for your project"
+                image="team-builder"
+              />
+            </div>
+            <div
+              className={`bg-orange mb-8 flex h-[220px] w-[350px] items-center justify-center overflow-hidden rounded-lg pt-1 shadow-2xl`}
+            >
+              <FeatureCard
+                color="orange"
+                title="Karma"
+                description="Regularly evaluates our talent to ensure quality"
+                image="karma"
+              />
+            </div>
+          </div>
+          <div
+            className={`bg-blue mb-8 flex h-[220px] w-[350px] items-center justify-center overflow-hidden rounded-lg pt-1 shadow-2xl`}
+          >
+            <FeatureCard
+              color="blue"
+              title="Calculator"
+              description="Uses data from past projects to provide better delivery estimates"
+              image="calculator"
+            />
+          </div>
         </div>
       </main>
     </>
